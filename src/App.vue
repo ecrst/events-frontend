@@ -1,12 +1,27 @@
 <template>
   <div id="app">
-    <router-view></router-view>
+    <auth-view v-if="isAuth"></auth-view>
+    <layout v-else>
+      <router-view></router-view>
+    </layout>
   </div>
 </template>
 
 <script>
+import AuthView from './components/auth/AuthView.vue'
+import Layout from './components/layout/Layout.vue'
+
 export default {
-  name: 'App'
+  name: 'App',
+  components: {
+    AuthView,
+    Layout
+  },
+  computed: {
+      isAuth () {
+        return this.$route.path.startsWith( '/auth')
+      }
+  }
 }
 </script>
 
@@ -22,11 +37,6 @@ body {
 #app, body {
   width: 100vw;
   height: 100vh;
-}
-.auth-view {
-  width: 100%;
-  height: 100%;
-  background-color: #eee;
 }
 </style>
 
