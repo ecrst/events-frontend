@@ -3,7 +3,10 @@
     <Header />
     <div class="layout-main">
       <div class="row">
-        <div class="col s8 offset-s2 main-content">
+        <div class="col s2">
+          <sidebar v-if="isAllowed"></sidebar>
+        </div>
+        <div class="col s8 main-content">
           <slot></slot>
         </div>
       </div>
@@ -15,13 +18,28 @@
 <script>
 import Header from './Header'
 import Footer from './Footer'
+import Sidebar from './Sidebar'
+import { mapGetters } from 'vuex';
 
 export default {
   name: 'Layout',
   components: {
     Header,
-    Footer
+    Footer,
+    Sidebar
   },
+  computed: {
+    ...mapGetters([
+      'isLogged',
+      'role',
+    ]),
+    isAllowed() {
+      return this.isLogged && this.role === 'administrator'
+    }
+  },
+  mounted() {
+    M.Collapsible.init(document.querySelector('.collapsible'));
+  }
 }
 </script>
 
@@ -32,4 +50,5 @@ export default {
 .main-content, .row {
   height: 100%;
 }
+
 </style>

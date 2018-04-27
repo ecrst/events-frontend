@@ -1,7 +1,9 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
-import Profile from '../components/profile/Profile.vue';
+import CreateUser from '../components/profile/CreateUser.vue';
+import Users from '../components/profile/Users.vue';
+import User from '../components/profile/User.vue';
 import Events from '../components/feed/Events.vue';
 import News from '../components/feed/News.vue';
 import AuthVuew from '../components/auth/AuthView.vue';
@@ -23,18 +25,29 @@ export default new Router({
       component: News,
     },
     {
-      path: '/profile',
-      component: Profile,
+      path: '/users',
+      component: Users,
     },
-
-        {
-          path: '/auth/login',
-          component: Login
-        },
-        {
-          path: '/auth/signup',
-          component: Signup
-        }
+    {
+      path: '/users/:id',
+      component: User
+    },
+    {
+      path: '/users/:id?edit',
+      component: User
+    },
+    {
+      path: '/createuser',
+      component: CreateUser,
+    },
+    {
+      path: '/auth/login',
+      component: Login
+    },
+    {
+      path: '/auth/signup',
+      component: Signup
+    }
 
   ]
 })
