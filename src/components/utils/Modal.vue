@@ -1,5 +1,5 @@
 <template>
-  <div id="confirm" class="modal">
+  <div :id="modalId" class="modal">
     <div class="modal-content center">
       <p>{{title}}</p>
       <a @click="$emit('confirm')" class="modal-action modal-close waves-effect waves-light green btn">{{confirm}}</a>
@@ -13,7 +13,6 @@ export default {
   name: 'Modal',
   data () {
     return {
-      modalInstance: null,
     }
   },
   props: {
@@ -27,16 +26,12 @@ export default {
     cancel: {
       type: String,
       default: 'Cancel',
+    },
+    modalId: {
+      type: String,
+      default: 'modal',
     }
   },
-  mounted() {
-    this.modalInstance = M.Modal.init(document.querySelector('.modal'))
-  },
-  methods: {
-    openModal(next) {
-      this.$data.modalInstance.open()
-    }
-  }
 }
 </script>
 

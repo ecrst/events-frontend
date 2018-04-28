@@ -5,7 +5,11 @@
         <div class="card-panel grey lighten-5 z-depth-1">
           <template v-if="!$route.query.edit">
 
-            <a @click="$router.push({query: {edit: 'true'}})" class="waves-effect waves grey lighten-5 black-text btn edit-button eb-edit z-depth-1"><i class="material-icons left">mode_edit</i>Edit</a>
+            <a @click="$router.push({query: {edit: 'true'}})" 
+              class="waves-effect waves grey lighten-5 black-text btn edit-button eb-edit z-depth-1">
+              <i class="material-icons left">mode_edit</i>
+              Edit
+            </a>
             <div class="row center">
               <h3>
                 {{user.firstName}} {{user.lastName}}
@@ -18,10 +22,10 @@
             <template v-else>
             <!-- Modals -->
             <modal title="All changes will be discarded" @confirm="discardChanges"></modal>
-            <modal title="Please confirm unsubscription" @confirm="unsubscribe"></modal>
+            <modal modalId="unsub" title="Please confirm unsubscription" @confirm="unsubscribe"></modal>
             
             <a @click.prevent="submitEditting" class="waves-effect waves green btn edit-button eb-save z-depth-1">Save</a>
-            <a class="waves-effect waves blue btn edit-button eb-cancel z-depth-1 modal-trigger" href="#confirm">Cancel</a>
+            <a class="waves-effect waves lighten-2 red btn edit-button eb-cancel z-depth-1 modal-trigger" href="#modal">Cancel</a>
 
             <div class="row edit-form">
               <form class="col s10">
@@ -53,7 +57,7 @@
                 </div>
               </form>
             </div>
-          <a class="waves-effect waves blue darken-2 btn edit-button eb-unsub z-depth-1 modal-trigger" href="#confirm">Unsubscribe</a>
+          <a class="waves-effect waves blue darken-2 btn edit-button eb-unsub z-depth-1 modal-trigger" href="#unsub">Unsubscribe</a>
           </template>
         </div>
       </div>
@@ -63,7 +67,7 @@
 
 <script>
 import { mapGetters } from 'vuex';
-import Modal from './Modal.vue';
+import Modal from '../utils/Modal.vue';
 
 export default {
   name: 'User',
@@ -103,6 +107,9 @@ export default {
   },
   components: {
     Modal
+  },
+  mounted() {
+      M.Modal.init(document.querySelectorAll('.modal'));
   }
 }
 </script>

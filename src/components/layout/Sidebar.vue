@@ -3,12 +3,12 @@
     <li>
       <div class="collapsible-header green white-text"><i class="material-icons">message</i>News</div>
       <div class="collapsible-body sb-menu-item">
-      
-        <button class="btn white black-text waves-effect waves-light sb-inner-btn" type="submit" name="action">
-          <i class="material-icons left">add_box</i>
-          Add news
-        </button>
-
+        <router-link to="/news/create">
+          <button class="btn white black-text waves-effect waves-light sb-inner-btn" type="submit" name="action">
+            <i class="material-icons left">add_box</i>
+            Add news
+          </button>
+        </router-link>
       </div>
     </li>
     <li>

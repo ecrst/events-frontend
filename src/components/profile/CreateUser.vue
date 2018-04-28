@@ -45,7 +45,7 @@
         </form>
         <div class="create-user-buttons row center">
             <a class="waves-effect waves green btn cub-create z-depth-1">Create</a>
-            <a class="waves-effect waves blue btn cub-cancel z-depth-1 modal-trigger" href="#confirm">Clear</a>
+            <a class="waves-effect waves blue btn cub-cancel z-depth-1 modal-trigger" href="#modal">Clear</a>
         </div>
       </div>
     </div>
@@ -54,7 +54,7 @@
 </template>
 
 <script>
-import Modal from './Modal.vue'
+import Modal from '../utils/Modal.vue'
 
 export default {
   name: 'CreateUser',
