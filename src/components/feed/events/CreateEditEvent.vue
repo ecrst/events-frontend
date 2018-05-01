@@ -59,6 +59,7 @@
     </form>
 
     <h4 class="center">Event registration</h4>
+
     <!-- <registration-form></registration-form> -->
     <div class="row">
       <div v-for="(label, index) in regLabels" :key="index">
@@ -121,7 +122,7 @@ export default {
       this.$router.go(-1);
     },
     previewEvent() {
-      this.setEventPreview({...this.eventData})
+      this.setEventPreview({...this.eventData, labels: this.regLabels})
       this.$router.push('/events/preview')
     },
     addField() {

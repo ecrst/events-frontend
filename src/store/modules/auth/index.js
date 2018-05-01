@@ -29,7 +29,6 @@ export default {
             router.push({path: '/'})
         },
         signOut({commit}, payload) {
-            console.log('SIGONUT')
             commit('setIsLogged', false)
             router.replace({path: '/'})
         }

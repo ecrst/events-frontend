@@ -5,24 +5,23 @@ export default {
     events: [
       {
         id: 1,
-        title: 'Horse licking contest',
+        title: 'Sed nisi.',
         date: '2018-06-01',
         time: '12:00:00',
         location: 'Horse Arena, Budapest',
-        description: `Lick the horse! Look at my horse! Lick the horse! Look at my horse! Lick the horse! Look at my horse! Lick the horse! Look at my horse! Lick the horse! Look at my horse! Lick the horse! Look at my horse! Lick the horse! Look at my horse!
-                      Lick the horse! Look at my horse! Lick the horse! Look at my horse! Lick the horse! Look at my horse! Lick the horse! Look at my horse! Lick the horse! Look at my horse! Lick the horse! Look at my horse! Lick the horse! Look at my horse!`,
+        description: `Curabitur sodales ligula in libero. Sed dignissim lacinia nunc. Curabitur tortor. Pellentesque nibh. Aenean quam. In scelerisque sem at dolor. Maecenas mattis. Sed convallis tristique sem. Proin ut ligula vel nunc egestas porttitor. Morbi lectus risus, iaculis vel, suscipit quis, luctus non, massa. Fusce ac turpis quis ligula lacinia aliquet. Mauris ipsum. 
+        Nulla metus metus, ullamcorper vel, tincidunt sed, euismod in, nibh. Quisque volutpat condimentum velit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nam nec ante. Sed lacinia, urna non tincidunt mattis, tortor neque adipiscing diam, a cursus ipsum ante quis turpis. Nulla facilisi. Ut fringilla. Suspendisse potenti. Nunc feugiat mi a tellus consequat imperdiet. Vestibulum sapien. Proin quam. `,
         price: 0,
         capacityMin: 0,
         capacityMax: 0,
       },
       {
         id: 2,
-        title: 'Turtle sucking challenge',
+        title: 'Etiam ultrices.',
         date: '2018-06-02',
         time: '06:00:00',
         location: 'Turtle Palace, Praha',
-        description: `Suck the turtle! Look at my turtle! Suck the turtle! Look at my turtle! Suck the turtle! Look at my turtle! Suck the turtle! Look at my turtle! Suck the turtle! Look at my turtle! Suck the turtle! Look at my turtle! Suck the turtle! Look at my turtle!
-                      \nSuck the turtle! Look at my turtle! Suck the turtle! Look at my turtle! Suck the turtle! Look at my turtle! Suck the turtle! Look at my turtle! Suck the turtle! Look at my turtle! Suck the turtle! Look at my turtle! Suck the turtle! Look at my turtle!`,
+        description: `Suspendisse in justo eu magna luctus suscipit. Sed lectus. Integer euismod lacus luctus magna. Quisque cursus, metus vitae pharetra auctor, sem massa mattis sem, at interdum magna augue eget diam. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Morbi lacinia molestie dui. Praesent blandit dolor. Sed non quam!`,
         price: 10,
         capacityMin: 20,
         capacityMax: 100,

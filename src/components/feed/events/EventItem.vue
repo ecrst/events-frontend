@@ -14,13 +14,23 @@
               </div>
             </div>
             <p class="center" v-if="event.capacityMin && event.capacityMax">Capacity: minimum {{event.capacityMin}} and maximum {{event.capacityMax}}</p>
-            <p>Price: {{event.price || 'Free!'}}{{event.price ? '$' : ''}}</p>
+            <p>Price:{{event.price !== 0 ? ' ' + event.price + '$' : ' Free!'}}</p>
           </div>
           <div class="card-action">
             <router-link class="green-text" :to="'../'">Back</router-link>
-            <router-link class="green-text" :to="'/events/' + event.id + '/registration'">Registration</router-link>
+            <a v-if="!showRegistration" @click.prevent="openRegistration" class="green-text">Registration</a>
           </div>
         </div>
+      </div>
+    </div>
+    <div v-if="showRegistration" class="row">
+      <div class="col s12">
+        <form @submit.prevent>
+          <div v-for="(label, index) in event.labels" :key="index">
+            <input :id="label.label + '-reg-form'" type="text" v-model="eventRegistrationForm[label.label]">
+            <label :for="label.label + '-reg-form'">{{label.label}}</label>
+          </div>
+        </form>
       </div>
     </div>
   </div>
@@ -34,6 +44,8 @@ export default {
   name: 'EventItem',
   data() {
     return {
+      showRegistration: false,
+      eventRegistrationForm: {}
     }
   },
   computed: {
@@ -57,7 +69,10 @@ export default {
   methods: {
     ...mapGetters([
       'getEventPreview'
-    ])
+    ]),
+    openRegistration() {
+      this.showRegistration = true
+    }
   },
   mounted() {
     M.Modal.init(document.querySelectorAll('.modal'));
