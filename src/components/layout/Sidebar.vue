@@ -14,7 +14,7 @@
     <li>
       <div class="collapsible-header green white-text"><i class="material-icons">place</i>Events</div>
       <div class="collapsible-body sb-menu-item">
-        <router-link to="/createevent">
+        <router-link to="/events/create">
           <button class="btn white black-text waves-effect waves-light sb-inner-btn" type="submit" name="action">
             <i class="material-icons left">pin_drop</i>
             New event

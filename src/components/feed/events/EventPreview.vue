@@ -1,34 +1,34 @@
 <template>
   <div>
-    <news-item :news="getPreview"></news-item>
-      <div class="create-news-buttons row center">
+    <event-item></event-item>
+      <div class="create-event-buttons row center">
         <a @click="publish" class="waves-effect green waves-light btn">Publish</a>
         <a @click="cancel" class="waves-effect red lighten-2 red btn">Cancel</a>
     </div>
   </div>
 </template>
 <script>
-import NewsItem from "../NewsItem.vue"
+import EventItem from "./EventItem.vue"
 import Modal from "../../utils/Modal.vue"
 import { mapActions, mapGetters } from 'vuex';
 export default {
-  name:'NewsPreview',
+  name:'EventPreview',
   components: {
-    NewsItem,
+    EventItem,
     Modal
   },
   computed: {
     ...mapGetters([
-      'getPreview'
+      'getEventPreview'
     ])
   },
   methods: {
     ...mapActions([
-      'clearPreview'
+      'clearEventPreview'
     ]),
     publish() {
-      this.clearPreview()
-      this.$router.push('/news')
+      this.clearEventPreview()
+      this.$router.push('/events')
     },
     cancel() {
       this.$router.go(-1)

@@ -45,21 +45,21 @@ import { mapActions, mapGetters } from 'vuex';
       return {
         title: '',
         text: '',
-        role: 'All',
+        role: '',
         isEdit: this.$route.path.match(/edit/)
       }
     },
     methods: {
       ...mapActions([
-        'setPreview',
-        'clearPreview'
+        'setNewsPreview',
+        'clearNewsPreview'
       ]),
       previewNews(){
-        this.setPreview({title: this.title, text: this.text, role: this.role})
+        this.setNewsPreview({title: this.title, text: this.text, role: this.role})
         this.$router.push('/news/preview')
       },
       abort() {
-        this.clearPreview();
+        this.clearNewsPreview();
         this.$router.push('/news')
       },
     },
@@ -79,7 +79,7 @@ import { mapActions, mapGetters } from 'vuex';
         this.text = news.text;
         this.role = news.role; 
       }
-      const news = this.$store.getters.getPreview; 
+      const news = this.$store.getters.getNewsPreview; 
       if (news) {
         this.title = news.title;
         this.text = news.text;

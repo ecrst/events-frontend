@@ -37,25 +37,25 @@ export default {
         getNews(state) {
             return state.news;
         },
-        getPreview(state) {
+        getNewsPreview(state) {
           return state.preview
         },
         getNewsById: state => id => state.news.find(news => news.id === id)
     },
     mutations: {
-        setPreview(state, payload) {
+        setNewsPreview(state, payload) {
           state.preview = payload
         },
-        clearPreview(state) {
+        clearNewsPreview(state) {
           state.preview = null
         }
     },
     actions: {    
-      setPreview({commit}, news) {
-         commit('setPreview', news)
+      setNewsPreview({commit}, news) {
+         commit('setNewsPreview', news)
       },
-      clearPreview({commit}) {
-        commit('clearPreview');
+      clearNewsPreview({commit}) {
+        commit('clearNewsPreview');
       }
     }
 }

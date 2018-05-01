@@ -15,7 +15,8 @@ export default {
     },
     getters: {
         isLogged: state => state.isLogged,
-        loggedUserId: state => state.loggedUser.id
+        loggedUserId: state => state.loggedUser.id,
+        loggedUserRole: state => state.loggedUser.role
     },
     mutations: {
         setIsLogged(state, isLogged) {

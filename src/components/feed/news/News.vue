@@ -1,5 +1,4 @@
 <template>
-
   <div>
     <news-item v-for="newsItem in getNews" 
     :key="newsItem.id" :news="newsItem"></news-item>

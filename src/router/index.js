@@ -4,10 +4,16 @@ import Router from 'vue-router'
 import CreateUser from '../components/profile/CreateUser.vue';
 import Users from '../components/profile/Users.vue';
 import User from '../components/profile/User.vue';
-import Events from '../components/feed/Events.vue';
-import News from '../components/feed/News.vue';
-import CreateNews from '../components/feed/create/CreateNews.vue';
-import NewsPreview from '../components/feed/preview/NewsPreview.vue';
+
+import Events from '../components/feed/events/Events.vue';
+import CreateEditEvent from '../components/feed/events/CreateEditEvent.vue';
+import EventItem from '../components/feed/events/EventItem.vue';
+import EventPreview from '../components/feed/events/EventPreview.vue';
+
+import News from '../components/feed/news/News.vue';
+import CreateNews from '../components/feed/news/CreateNews.vue';
+import NewsPreview from '../components/feed/news/NewsPreview.vue';
+
 import AuthVuew from '../components/auth/AuthView.vue';
 import Login from '../components/auth/Login.vue';
 import Signup from '../components/auth/Signup.vue';
@@ -21,6 +27,18 @@ export default new Router({
     {
       path: '/events',
       component: Events,
+    },
+    {
+      path: '/events/create',
+      component: CreateEditEvent
+    },
+    {
+      path: '/events/preview',
+      component: EventPreview
+    },
+    {
+      path: '/events/:id',
+      component: EventItem,
     },
     {
       path: '/news',
@@ -61,6 +79,10 @@ export default new Router({
     {
       path: '/auth/signup',
       component: Signup
+    },
+    {
+      path: '/kek',
+      component: EventItem
     }
 
   ]

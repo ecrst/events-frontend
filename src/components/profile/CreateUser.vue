@@ -74,6 +74,7 @@ export default {
   },
   mounted() {
     M.FormSelect.init(document.querySelector('select'));
+    M.Modal.init(document.querySelectorAll('.modal'));
   },
 
   methods: {

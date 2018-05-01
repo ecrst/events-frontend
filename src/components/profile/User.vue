@@ -110,6 +110,9 @@ export default {
   },
   mounted() {
       M.Modal.init(document.querySelectorAll('.modal'));
+  },
+  updated() {
+      M.Modal.init(document.querySelectorAll('.modal'));
   }
 }
 </script>
