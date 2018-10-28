@@ -1,6 +1,5 @@
 <template>
     <div class="login">
-      <!-- <button @click="$store.dispatch('signIn')">Login</button> -->
       <h1 class="center-align">Welcome!</h1>
       <div class="row">
         <form class="col s12" @submit.prevent="signIn">
