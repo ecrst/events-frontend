@@ -58,12 +58,12 @@ export default {
   font-size: 4em;
   font-weight: 900;
 }
-/* label focus color */
-.input-field input:focus + label {
-  color: #4CAF50 !important;
-}
-/* label underline focus color */
-.input-field input:focus {
-  border-bottom: 1px solid #4CAF50 !important;
-}
+   /* label focus color */
+   .input-field input:focus + label {
+     color: #4CAF50 !important;
+   }
+   /* label underline focus color */
+   .input-field input:focus {
+     border-bottom: 1px solid #4CAF50 !important;
+   }
 </style>

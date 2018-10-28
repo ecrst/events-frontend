@@ -21,7 +21,7 @@ export default {
       isAuth () {
         return this.$route.path.startsWith( '/auth')
       }
-  },
+  }
 }
 </script>
 
@@ -31,14 +31,11 @@ export default {
   padding: 0;
   box-sizing: border-box;
 }
-*:focus {
-    outline: none;
-}
 body {
   font-family: 'Open Sans', sans-serif;
 }
 #app, body {
-  width: 100%;
+  width: 100vw;
   height: 100vh;
 }
 </style>
